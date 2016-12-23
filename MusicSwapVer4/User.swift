@@ -13,7 +13,7 @@ class User: Object{
     
     var name:String = ""
     var password:String = ""
-    var myMusic:[MyMusic] = []//3曲格納する配列
+    //var myMusic:[MyMusic] = []//3曲格納する配列
     
     /*func addMyMusic(selectedMusic: SearchMusic){
         myMusic?.name = selectedMusic.name

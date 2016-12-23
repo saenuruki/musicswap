@@ -14,6 +14,11 @@ class MainViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let realm = try! Realm()
+        let user = realm.objects(User.self).filter("name contains 'sae'")
+        print("user.name = \(user)")
+        
     }
     
     override func didReceiveMemoryWarning() {

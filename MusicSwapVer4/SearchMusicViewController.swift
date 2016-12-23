@@ -173,21 +173,26 @@ class SearchMusicViewController: UIViewController, UISearchBarDelegate, UITableV
     
     
    internal func onClickNextButton(sender: UIButton){
-       
+    
+        //ユーザー情報登録 realmへの保存
+        self.user = User()
+        self.user?.name = profile[0]
+        print("user.name = \(user?.name)")
+        self.user?.password = profile[1]
+        /*for count in 0...2 {
+            user?.myMusic[count].name = selectedMusicArray[count].name
+            user?.myMusic[count].artist = selectedMusicArray[count].artist
+            user?.myMusic[count].imageUrl = selectedMusicArray[count].imageUrl
+        }*/
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(user!)
+        }
+        //ページ遷移する最後にcurrentuserにUser.nameを代入する
+
         let storyboard = UIStoryboard(name: "Main",bundle: nil) //storyboardを指定
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
         self.present(mainViewController, animated: true, completion: nil)
-    
-        
-        /*
-         selectedMusicArrayの中身をUserクラスの3曲配列に取得する
-         self.user?.myThreeMusic = selectedMusicArray⇒恐らくfor文で一つずつ代入
-         let realm = try! Realm()
-         try! realm.write {
-            realm.add(self.user!)
-         }
-         */
     }
     
-    //ページ遷移する最後にcurrentuserにUser.nameを代入する
 }

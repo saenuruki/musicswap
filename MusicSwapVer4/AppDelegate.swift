@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //現在はユーザーを未設定にしているが、ここでユーザーのログイン情報を取得する
-        let currentuser:String? = nil
+        let currentuser:String? = nil  //realmから情報を引き出す?
         
         //ユーザーがいない場合サインイン画面に遷移
         if(currentuser == nil){
