@@ -17,6 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        let config = Realm.Configuration(   // 新しいスキーマバージョンを設定します。 これは以前に使用されたものよりも大きくなければなりません
+            schemaVersion: 2,
+            
+            migrationBlock: { migration, oldSchemaVersion in //スキーマのバージョンが上記のものよりも低い/を開くときに自動的に呼び出されるブロックを設定する
+                if (oldSchemaVersion < 1) {
+                }
+            }
+        )
+        
+        Realm.Configuration.defaultConfiguration = config   // Tell Realm to use this new configuration object for the default Realm
+        
+        let realm = try! Realm()    //デフォルトのレルムに対してこの新しい設定オブジェクトを使用するようにRealmに指示します
+        print(realm, "Realm")
+        print(config,"Realm Version")
+        
         //現在はユーザーを未設定にしているが、ここでユーザーのログイン情報を取得する
         let currentuser:String? = nil  //realmから情報を引き出す?
         

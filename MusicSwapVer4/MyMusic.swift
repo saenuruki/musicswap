@@ -11,8 +11,10 @@ import RealmSwift
 
 class MyMusic: Object{
     
-    var name:String = ""
-    var artist:String = ""
-    var imageUrl:String?
-    var status:String = ""//現在の3曲(current)と履歴(history)を識別する
+    dynamic var id:Int = 0
+    dynamic var name:String = ""
+    dynamic var artist:String = ""
+    dynamic var imageUrl:String?
+    dynamic var status:String = ""//現在の3曲(current)と履歴(history)を識別する
+    //dynamic var user:User?
 }

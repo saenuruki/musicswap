@@ -11,8 +11,9 @@ import RealmSwift
 
 class User: Object{
     
-    var name:String = ""
-    var password:String = ""
+    dynamic var name:String = ""
+    dynamic var password:String = ""
+    let myMusic = List<MyMusic>()
     //var myMusic:[MyMusic] = []//3曲格納する配列
     
     /*func addMyMusic(selectedMusic: SearchMusic){

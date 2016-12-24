@@ -81,10 +81,12 @@ class SearchMusicViewController: UIViewController, UISearchBarDelegate, UITableV
                     let resultCount: Int = (json["resultCount"] as? Int)!
                     for count in 0..<resultCount{
                         let result = results[count]
+                        guard let id = result["trackId"] as? Int else {continue}
                         guard let name = result["trackName"] as? String else {continue}
                         guard let artist = result["artistName"] as? String else {continue}
                         guard let imageUrl = result["artworkUrl60"] as? String else {continue}
                         self.searchMusic = SearchMusic()
+                        self.searchMusic?.id = id
                         self.searchMusic?.name = name
                         self.searchMusic?.artist = artist
                         self.searchMusic?.imageUrl = imageUrl
@@ -175,15 +177,25 @@ class SearchMusicViewController: UIViewController, UISearchBarDelegate, UITableV
    internal func onClickNextButton(sender: UIButton){
     
         //ユーザー情報登録 realmへの保存
+        print("<User登録情報>----------------")
         self.user = User()
         self.user?.name = profile[0]
         print("user.name = \(user?.name)")
         self.user?.password = profile[1]
-        /*for count in 0...2 {
-            user?.myMusic[count].name = selectedMusicArray[count].name
-            user?.myMusic[count].artist = selectedMusicArray[count].artist
-            user?.myMusic[count].imageUrl = selectedMusicArray[count].imageUrl
-        }*/
+        print("user.password = \(user?.password)")
+        for count in 0...2 {
+            let myMusic = MyMusic()
+            myMusic.name = selectedMusicArray[count].name
+            myMusic.artist = selectedMusicArray[count].artist
+            myMusic.imageUrl = selectedMusicArray[count].imageUrl
+            let realmMyMusic = try! Realm()
+            try! realmMyMusic.write {
+                realmMyMusic.add(myMusic)
+            }
+            print("user.myMusic = \(myMusic)")
+        }
+        print(user!)
+        print("============================")
         let realm = try! Realm()
         try! realm.write {
             realm.add(user!)

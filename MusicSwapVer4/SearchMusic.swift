@@ -11,6 +11,7 @@ import RealmSwift
 
 class SearchMusic: Object{
     
+    dynamic var id:Int = 0
     dynamic var name:String = ""
     dynamic var artist:String = ""
     dynamic var imageUrl:String?

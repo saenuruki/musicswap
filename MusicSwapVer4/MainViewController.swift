@@ -16,7 +16,7 @@ class MainViewController: UIViewController{
         super.viewDidLoad()
 
         let realm = try! Realm()
-        let user = realm.objects(User.self).filter("name contains 'sae'")
+        let user = realm.objects(User.self)
         print("user.name = \(user)")
         
     }
