@@ -20,6 +20,17 @@ class NewUserViewController: UIViewController{
         super.viewDidLoad()
     }
     
+    //キーボードが出ている状態で、キーボード以外をタップしたらキーボードを閉じる
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //非表示にする。
+        if(nameLabel.isFirstResponder){
+            nameLabel.resignFirstResponder()
+        }else if(passwordLabel.isFirstResponder){
+            passwordLabel.resignFirstResponder()
+        }
+        super.touchesBegan(touches, with: event)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
