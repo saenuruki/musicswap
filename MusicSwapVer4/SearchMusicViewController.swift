@@ -84,7 +84,7 @@ class SearchMusicViewController: UIViewController, UISearchBarDelegate, UITableV
                         guard let id = result["trackId"] as? Int else {continue}
                         guard let name = result["trackName"] as? String else {continue}
                         guard let artist = result["artistName"] as? String else {continue}
-                        guard let imageUrl = result["artworkUrl60"] as? String else {continue}
+                        guard let imageUrl = result["artworkUrl100"] as? String else {continue}
                         self.searchMusic = SearchMusic()
                         self.searchMusic?.id = id
                         self.searchMusic?.name = name
@@ -192,6 +192,7 @@ class SearchMusicViewController: UIViewController, UISearchBarDelegate, UITableV
             try! realmMyMusic.write {
                 realmMyMusic.add(myMusic)
             }
+            self.user?.myMusic.append(myMusic)
             print("user.myMusic = \(myMusic)")
         }
         print(user!)

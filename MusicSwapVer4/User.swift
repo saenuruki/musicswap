@@ -11,15 +11,12 @@ import RealmSwift
 
 class User: Object{
     
-    dynamic var name:String = ""
-    dynamic var password:String = ""
+    // dynamic var id:Int = 0   乱数か何かで取得する⇒データベースにない番号
+    dynamic var name:String = ""    //名前は重複していてかなわない
+    dynamic var password:String = ""    //暗号処理をする
     let myMusic = List<MyMusic>()
-    //var myMusic:[MyMusic] = []//3曲格納する配列
-    
-    /*func addMyMusic(selectedMusic: SearchMusic){
-        myMusic?.name = selectedMusic.name
-        self.myMusic.artist = selectedMusic.artist
-    }*/
-    
+    /*override static func primaryKey() -> String? {    
+     return "id"
+     }*/
 }
 
