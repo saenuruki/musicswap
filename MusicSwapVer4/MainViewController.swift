@@ -28,6 +28,14 @@ class MainViewController: UIViewController{
         imageViewLoad(view: view1, count: 1)
         imageViewLoad(view: view2, count: 2)
         imageViewLoad(view: view3, count: 3)
+        
+        // タップを定義
+        let tap = UITapGestureRecognizer(target: self, action: #selector(MainViewController.viewTap(sender:count:)))
+        
+        // imageViewにタップを登録
+        self.view1.addGestureRecognizer(tap)
+        self.view2.addGestureRecognizer(tap)
+        self.view3.addGestureRecognizer(tap)
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,6 +47,16 @@ class MainViewController: UIViewController{
         let url = URL(string: (user?.myMusic[count - 1].imageUrl)!)
         if let imageData = try? Data(contentsOf: url!){
             imageView.image = UIImage(data: imageData)
+        }
+    }
+    
+    //エラーの原因
+    func viewTap(sender: UITapGestureRecognizer, count: Int){
+        if user?.myMusic[count-1].status == "current"{
+            user?.myMusic[count-1].status = "selected"
+            //変更をrealmに保存する
+            self.view.backgroundColor = UIColor.gray
+            print("曲の再生状態 = \(user?.myMusic[count-1].status)")  //デバック用
         }
     }
     

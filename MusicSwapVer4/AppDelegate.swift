@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        FIRApp.configure()  //Firebaseを利用するコマンド
         
         let config = Realm.Configuration(   // 新しいスキーマバージョンを設定します。 これは以前に使用されたものよりも大きくなければなりません
             schemaVersion: 2,

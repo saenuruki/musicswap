@@ -15,6 +15,6 @@ class MyMusic: Object{
     dynamic var name:String = ""
     dynamic var artist:String = ""
     dynamic var imageUrl:String?
-    dynamic var status:String = ""//現在の3曲(current)と履歴(history)を識別する
+    dynamic var status:String = ""//現在の3曲(current)と選択済(selected)と履歴(history)を識別する
     //dynamic var user:User?
 }

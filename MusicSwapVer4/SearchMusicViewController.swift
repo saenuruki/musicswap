@@ -188,6 +188,7 @@ class SearchMusicViewController: UIViewController, UISearchBarDelegate, UITableV
             myMusic.name = selectedMusicArray[count].name
             myMusic.artist = selectedMusicArray[count].artist
             myMusic.imageUrl = selectedMusicArray[count].imageUrl
+            myMusic.status = "current"
             let realmMyMusic = try! Realm()
             try! realmMyMusic.write {
                 realmMyMusic.add(myMusic)
