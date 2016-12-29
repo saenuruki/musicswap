@@ -11,8 +11,9 @@ import RealmSwift
 
 class User: Object{
     
-    // dynamic var id:Int = 0   乱数か何かで取得する⇒データベースにない番号
+    
     dynamic var name:String = ""    //名前は重複していてかなわない
+    dynamic var email:String = ""
     dynamic var password:String = ""    //暗号処理をする
     let myMusic = List<MyMusic>()
     /*override static func primaryKey() -> String? {    
