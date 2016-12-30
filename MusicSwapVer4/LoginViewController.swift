@@ -56,26 +56,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: {(user,error) in
             if error == nil {
                 if let loginUser = user{
-                    if self.checkUserValidate(user: loginUser) {
+                    //if self.checkUserValidate(user: loginUser) {
                         // 完了済みなら、ListViewControllerに遷移
-                        print(FIRAuth.auth()?.currentUser)
-                        self.traisitionToView()
-                    }else {
+                    self.traisitionToView()
+                    //}else {
                         // 完了していない場合は、アラートを表示
-                        self.prezentValidateAlert()
-                    }
+                        //self.prezentValidateAlert()
+                    //}
                 }
             }else {
                 print("ログイン失敗") //エラー表示
-                 print("error...\(error?.localizedDescription)")
+                print("error...\(error?.localizedDescription)")
             }
         })
     }
     
     //ログインした際にバリデーションが完了しているかを返す
-    func checkUserValidate(user: FIRUser)  -> Bool {
+    /*func checkUserValidate(user: FIRUser)  -> Bool {
         return user.isEmailVerified
-    }
+    }*/
     
     //メールのバリデーションが完了していない場合の警告を表示する
     func prezentValidateAlert(){
