@@ -7,25 +7,22 @@
 //
 
 import UIKit
-import RealmSwift
+import Firebase
 
 class SearchMusicViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
     
     //prepareForSegueメソッドより引き継いだ情報を取得する
-    var profile = [String]()
-    var user:User?
     var nextButton: UIButton!
     var searchMusicArray = [SearchMusic]()
     var searchMusic:SearchMusic?
     var selectedMusicArray = [SearchMusic]()  //選択済の曲リスト
     let mySections = ["選択された曲","検索結果"]
+    let ref = FIRDatabase.database().reference() //FirebaseDatabaseのルートを指定
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("user.name = \(profile[0])")    //デバック用
-        print("user.password = \(profile[1])")//デバック用
-        
+
         // Do any additional setup after loading the view, typically from a nib.
         searchText.delegate = self  //searchBarの通知先を指定
         searchText.placeholder = "検索キーワードを入力してください"
@@ -95,7 +92,7 @@ class SearchMusicViewController: UIViewController, UISearchBarDelegate, UITableV
                 }
                 self.tableView.reloadData()
             } catch {
-                print("エラーです")
+                print("JSON取得出来ませんでした。")
             }
         })
         task.resume()
@@ -174,10 +171,19 @@ class SearchMusicViewController: UIViewController, UISearchBarDelegate, UITableV
     }
     
     
-   internal func onClickNextButton(sender: UIButton){
-    
+    internal func onClickNextButton(sender: UIButton){
+        for count in 0...2 {
+            let addMyMusic = ["name": selectedMusicArray[count].name,
+                           "artist": selectedMusicArray[count].artist,
+                           "imageUrl": selectedMusicArray[count].imageUrl,
+                           "status": "current"]
+            print("ここまでは行けましたか??==========================================")
+            print("\((FIRAuth.auth()?.currentUser)!)")//uidって作っていないよね？
+            self.ref.child((FIRAuth.auth()?.currentUser?.uid)!).child("myMusic").childByAutoId().setValue(addMyMusic)
+        }
+       
         //ユーザー情報登録 realmへの保存
-        print("<User登録情報>----------------")
+        /*print("<User登録情報>----------------")
         self.user = User()
         self.user?.name = profile[0]
         print("user.name = \(user?.name)")
@@ -201,7 +207,7 @@ class SearchMusicViewController: UIViewController, UISearchBarDelegate, UITableV
         let realm = try! Realm()
         try! realm.write {
             realm.add(user!)
-        }
+        }*/
         //ページ遷移する最後にcurrentuserにUser.nameを代入する
 
         let storyboard = UIStoryboard(name: "Main",bundle: nil) //storyboardを指定

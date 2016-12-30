@@ -5,7 +5,7 @@
 //  Created by 塗木冴 on 2016/12/17.
 //  Copyright © 2016年 塗木冴. All rights reserved.
 //
-
+/*
 import Foundation
 import RealmSwift
 
@@ -20,4 +20,5 @@ class User: Object{
      return "id"
      }*/
 }
+ */
 

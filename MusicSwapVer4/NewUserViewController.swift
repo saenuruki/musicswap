@@ -28,6 +28,9 @@ class NewUserViewController: UIViewController, UITextFieldDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        /*if self.checkUserVerify(){
+            self.transitionToView()
+        }*/
     }
     
     
@@ -68,7 +71,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate{
         guard let password = passwordTextField.text else {return}
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: {(user,error) in
-            if error == nil{
+            if error == nil{    //ログインの手続きを続ける
                 if let user = user{
                     let addRequest = user.profileChangeRequest()
                     addRequest.displayName = name
@@ -76,17 +79,62 @@ class NewUserViewController: UIViewController, UITextFieldDelegate{
                         if error != nil {
                             // An error happened.
                         } else {
-                            // Profile updated.
+                            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: {(sUser,sError) in
+                                if sError == nil {
+                                    if let loginUser = sUser {
+                                        // バリデーションが完了しているか確認。完了ならそのままログイン
+                                        //if self.checkUserValidate(user: loginUser) {
+                                            // 完了済みなら、SearchMusicViewControllerに遷移
+                                        self.transitionToView()
+                                        //}else {
+                                            // 完了していない場合は、アラートを表示
+                                            //self.presentValidateAlert()
+                                        //}
+                                    }
+                                }else {
+                                    print("==============================================")
+                                    print("error...\(sError?.localizedDescription)")
+                                    print("==============================================")
+                                }
+                            })
                         }
                     }
                 }
-                self.transitionToView()
-            } else {
-                print("SignUp失敗")
+                /*user?.sendEmailVerification(completion: {(error) in
+                    if error == nil {
+                        self.transitionToView()
+                    } else {
+                        print("==============================================")
+                        print("SignUp失敗2")
+                        print("\(error?.localizedDescription)")
+                        print("==============================================")
+                    }
+                })*/
+            } else {    //アカウント作成失敗
+                print("==============================================")
+                print("SignUp失敗1")
+                print(error)
                 print("\(error?.localizedDescription)")
+                print("==============================================")
             }
         })
         
+    }
+    
+    func checkUserVerify() -> Bool{
+        guard let user = FIRAuth.auth()?.currentUser else {return false}
+        return user.isEmailVerified
+    }
+    
+    // ログインした際に、バリデーションが完了しているか返す
+    func checkUserValidate(user: FIRUser)  -> Bool {
+        return user.isEmailVerified
+    }
+    // メールのバリデーションが完了していない場合のアラートを表示
+    func presentValidateAlert() {
+        let alert = UIAlertController(title: "メール認証", message: "メール認証を行ってください", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 import Firebase
 
 @UIApplicationMain
@@ -20,26 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()  //Firebaseを利用するコマンド
         
-        let config = Realm.Configuration(   // 新しいスキーマバージョンを設定します。 これは以前に使用されたものよりも大きくなければなりません
-            schemaVersion: 2,
-            
-            migrationBlock: { migration, oldSchemaVersion in //スキーマのバージョンが上記のものよりも低い/を開くときに自動的に呼び出されるブロックを設定する
-                if (oldSchemaVersion < 1) {
-                }
-            }
-        )
-        
-        Realm.Configuration.defaultConfiguration = config   // Tell Realm to use this new configuration object for the default Realm
-        
-        let realm = try! Realm()    //デフォルトのレルムに対してこの新しい設定オブジェクトを使用するようにRealmに指示します
-        print(realm, "Realm")
-        print(config,"Realm Version")
-        
         //現在はユーザーを未設定にしているが、ここでユーザーのログイン情報を取得する
-        let currentuser:String? = nil  //realmから情報を引き出す?
+        //let currentuser = FIRAuth.auth()?.currentUser
         
         //ユーザーがいない場合サインイン画面に遷移
-        if(currentuser == nil){
+        //if(currentuser == nil){
             //windowを生成
             self.window = UIWindow(frame: UIScreen.main.bounds)
             //Storyboardを指定
@@ -50,10 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = initialViewController
             //表示
             self.window?.makeKeyAndVisible()
-        }else{
+        //}else{
             //ユーザーがいる場合Storyboardでチェックの入っているIs Initial View Controllerに遷移する
             //currentuserが誰かを識別判定する
-        }
+        //}
         
         return true
     }
