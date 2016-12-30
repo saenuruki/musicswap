@@ -7,17 +7,26 @@
 //
 
 import UIKit
-import RealmSwift
+import Firebase
 
 class FlashViewController: UIViewController{
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.transitionToView()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    func transitionToView(){
+        let storyboard = UIStoryboard(name: "Main",bundle: nil) //storyboardを指定
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+        self.present(mainViewController, animated: true, completion: nil)
+    }
 }

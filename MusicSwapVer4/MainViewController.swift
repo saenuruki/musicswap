@@ -59,5 +59,18 @@ class MainViewController: UIViewController{
             print("曲の再生状態 = \(user?.myMusic[count-1].status)")  //デバック用
         }
     }*/
+    @IBAction func tapLogout(_ sender: Any) {
+        logout()
+    }
     
+    func logout(){
+        do{
+            try FIRAuth.auth()?.signOut()   //do-try-catchの中で、FIRAuth.auth()?.signOut()を呼ぶだけで、ログアウトが完了
+            let storyboard = UIStoryboard(name: "Login",bundle: nil) //storyboardを指定
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            self.present(loginViewController, animated: true, completion: nil)
+        }catch let error as NSError {
+            print("ログアウト失敗：\(error.localizedDescription)")
+        }
+    }
 }

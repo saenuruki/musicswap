@@ -19,26 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()  //Firebaseを利用するコマンド
         
-        //現在はユーザーを未設定にしているが、ここでユーザーのログイン情報を取得する
-        //let currentuser = FIRAuth.auth()?.currentUser
-        
-        //ユーザーがいない場合サインイン画面に遷移
-        //if(currentuser == nil){
-            //windowを生成
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            //Storyboardを指定
-            let storyboard = UIStoryboard(name: "Login", bundle: nil)
-            //Viewcontrollerを指定
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-            //rootViewControllerに入れる
-            self.window?.rootViewController = initialViewController
-            //表示
-            self.window?.makeKeyAndVisible()
-        //}else{
-            //ユーザーがいる場合Storyboardでチェックの入っているIs Initial View Controllerに遷移する
-            //currentuserが誰かを識別判定する
-        //}
-        
+        FIRAuth.auth()?.addStateDidChangeListener { auth, user in   //Userのログイン状況を取得する
+            if user == nil {
+                self.window = UIWindow(frame: UIScreen.main.bounds) //windowを生成
+                let storyboard = UIStoryboard(name: "Login", bundle: nil)   //Storyboardを指定
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") //Viewcontrollerを指定
+                self.window?.rootViewController = initialViewController //rootViewControllerに入れる
+                self.window?.makeKeyAndVisible()    //表示
+            }else{
+                //ユーザーがいる場合Storyboardでチェックの入っているIs Initial View Controllerに遷移する
+            }
+        }
         return true
     }
 
