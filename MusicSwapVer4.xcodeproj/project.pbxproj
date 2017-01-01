@@ -15,6 +15,8 @@
 		FF33299A1DF8F02700A5893B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3329981DF8F02700A5893B /* LaunchScreen.storyboard */; };
 		FF3329A21DF901C400A5893B /* SearchMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3329A11DF901C400A5893B /* SearchMusic.swift */; };
 		FF6BC0BD1E165AF000B1D559 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF6BC0BC1E165AF000B1D559 /* GoogleService-Info.plist */; };
+		FF6BC0C51E192A3B00B1D559 /* MyHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6BC0C41E192A3B00B1D559 /* MyHistoryViewController.swift */; };
+		FF6BC0C71E192A4E00B1D559 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6BC0C61E192A4E00B1D559 /* MyPageViewController.swift */; };
 		FFCF17921E053023008B05E9 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF17911E053023008B05E9 /* NewUserViewController.swift */; };
 		FFCF17941E053040008B05E9 /* SearchMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF17931E053040008B05E9 /* SearchMusicViewController.swift */; };
 		FFCF17961E054965008B05E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF17951E054965008B05E9 /* User.swift */; };
@@ -38,6 +40,8 @@
 		FF3329A11DF901C400A5893B /* SearchMusic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMusic.swift; sourceTree = "<group>"; };
 		FF6BC0BB1E15F0FD00B1D559 /* MusicSwapVer4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicSwapVer4.entitlements; sourceTree = "<group>"; };
 		FF6BC0BC1E165AF000B1D559 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF6BC0C41E192A3B00B1D559 /* MyHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyHistoryViewController.swift; sourceTree = "<group>"; };
+		FF6BC0C61E192A4E00B1D559 /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		FFCF17911E053023008B05E9 /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		FFCF17931E053040008B05E9 /* SearchMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMusicViewController.swift; sourceTree = "<group>"; };
 		FFCF17951E054965008B05E9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				FFCF17971E080BCD008B05E9 /* Main.storyboard */,
 				FFCF17991E080C86008B05E9 /* FlashViewController.swift */,
 				FFCF179D1E0A29EE008B05E9 /* MainViewController.swift */,
+				FF6BC0C41E192A3B00B1D559 /* MyHistoryViewController.swift */,
+				FF6BC0C61E192A4E00B1D559 /* MyPageViewController.swift */,
 				FF3329961DF8F02700A5893B /* Assets.xcassets */,
 				FF3329981DF8F02700A5893B /* LaunchScreen.storyboard */,
 				FF33299B1DF8F02700A5893B /* Info.plist */,
@@ -254,9 +260,11 @@
 				FF3329921DF8F02700A5893B /* LoginViewController.swift in Sources */,
 				FFCF17921E053023008B05E9 /* NewUserViewController.swift in Sources */,
 				FF3329901DF8F02700A5893B /* AppDelegate.swift in Sources */,
+				FF6BC0C71E192A4E00B1D559 /* MyPageViewController.swift in Sources */,
 				FFCF179E1E0A29EE008B05E9 /* MainViewController.swift in Sources */,
 				FFCF179A1E080C86008B05E9 /* FlashViewController.swift in Sources */,
 				FFCF179C1E0A2522008B05E9 /* MyMusic.swift in Sources */,
+				FF6BC0C51E192A3B00B1D559 /* MyHistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

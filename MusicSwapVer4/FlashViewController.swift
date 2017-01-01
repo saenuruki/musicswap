@@ -6,7 +6,7 @@
 //  Copyright © 2016年 塗木冴. All rights reserved.
 //
 
-import UIKit
+/*import UIKit
 import Firebase
 
 class FlashViewController: UIViewController{
@@ -29,4 +29,4 @@ class FlashViewController: UIViewController{
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
         self.present(mainViewController, animated: true, completion: nil)
     }
-}
+}*/

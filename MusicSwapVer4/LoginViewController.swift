@@ -44,8 +44,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     //ログイン完了後にページ遷移する先を指定する
     func traisitionToView(){
         let storyboard = UIStoryboard(name: "Main",bundle: nil) //storyboardを指定
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-        self.present(mainViewController, animated: true, completion: nil)
+        let mainTabBar = storyboard.instantiateInitialViewController()
+        self.present(mainTabBar!, animated: true, completion: nil)
     }
    
     //ログインをするためのメソッド

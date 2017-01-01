@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if user == nil {
                 self.window = UIWindow(frame: UIScreen.main.bounds) //windowを生成
                 let storyboard = UIStoryboard(name: "Login", bundle: nil)   //Storyboardを指定
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") //Viewcontrollerを指定
+                let initialViewController = storyboard.instantiateInitialViewController() //Viewcontrollerを指定
                 self.window?.rootViewController = initialViewController //rootViewControllerに入れる
                 self.window?.makeKeyAndVisible()    //表示
             }else{

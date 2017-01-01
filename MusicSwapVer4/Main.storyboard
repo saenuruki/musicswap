@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QOo-wu-rIt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dKS-xK-acy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -164,7 +164,7 @@
                             <constraint firstItem="5Ae-er-M6V" firstAttribute="top" secondItem="XjN-jx-TQA" secondAttribute="bottom" constant="28" id="zSZ-Wh-5hl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MyPage" id="5qg-C9-c4J"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="MyPage" id="5qg-C9-c4J"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nr6-qW-ffP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -192,16 +192,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="履歴" id="qGn-76-6xP"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="履歴" id="qGn-76-6xP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gag-e3-lqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1414" y="-368"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--mainTabBar-->
         <scene sceneID="bnd-Qa-q8W">
             <objects>
-                <tabBarController id="dKS-xK-acy" sceneMemberID="viewController">
+                <tabBarController title="mainTabBar" id="dKS-xK-acy" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="VeD-nx-QIb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -238,10 +238,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.1519406952" blue="0.20813924750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="X1t-wW-iQS" firstAttribute="centerY" secondItem="kWz-Yu-jEQ" secondAttribute="centerY" id="5OJ-SW-PZv"/>
-                                    <constraint firstItem="X1t-wW-iQS" firstAttribute="centerX" secondItem="kWz-Yu-jEQ" secondAttribute="centerX" id="Mqf-ER-leR"/>
-                                    <constraint firstItem="X1t-wW-iQS" firstAttribute="leading" secondItem="kWz-Yu-jEQ" secondAttribute="leading" constant="5" id="cmo-S6-xy7"/>
-                                    <constraint firstItem="X1t-wW-iQS" firstAttribute="top" secondItem="kWz-Yu-jEQ" secondAttribute="top" constant="5" id="wtJ-o1-yfw"/>
+                                    <constraint firstItem="X1t-wW-iQS" firstAttribute="top" secondItem="kWz-Yu-jEQ" secondAttribute="top" constant="5" id="Pch-qe-llx"/>
+                                    <constraint firstItem="X1t-wW-iQS" firstAttribute="leading" secondItem="kWz-Yu-jEQ" secondAttribute="leading" constant="5" id="TzK-Tc-ac3"/>
+                                    <constraint firstItem="X1t-wW-iQS" firstAttribute="centerX" secondItem="kWz-Yu-jEQ" secondAttribute="centerX" id="Z8Z-Wi-bMD"/>
+                                    <constraint firstItem="X1t-wW-iQS" firstAttribute="centerY" secondItem="kWz-Yu-jEQ" secondAttribute="centerY" id="g3D-7T-4dU"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wm-8u-YpE">
@@ -253,10 +253,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.1519406952" blue="0.20813924750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="PV3-O1-hcx" firstAttribute="centerY" secondItem="7wm-8u-YpE" secondAttribute="centerY" id="6gT-ZE-eYE"/>
-                                    <constraint firstItem="PV3-O1-hcx" firstAttribute="top" secondItem="7wm-8u-YpE" secondAttribute="top" constant="5" id="DfT-xk-gM4"/>
-                                    <constraint firstItem="PV3-O1-hcx" firstAttribute="centerX" secondItem="7wm-8u-YpE" secondAttribute="centerX" id="Dgq-P7-JyF"/>
-                                    <constraint firstItem="PV3-O1-hcx" firstAttribute="leading" secondItem="7wm-8u-YpE" secondAttribute="leading" constant="5" id="rva-L6-HCd"/>
+                                    <constraint firstItem="PV3-O1-hcx" firstAttribute="top" secondItem="7wm-8u-YpE" secondAttribute="top" constant="5" id="Bup-lh-1aE"/>
+                                    <constraint firstItem="PV3-O1-hcx" firstAttribute="leading" secondItem="7wm-8u-YpE" secondAttribute="leading" constant="5" id="c0X-6L-Fbg"/>
+                                    <constraint firstItem="PV3-O1-hcx" firstAttribute="centerX" secondItem="7wm-8u-YpE" secondAttribute="centerX" id="fGl-OT-43n"/>
+                                    <constraint firstItem="PV3-O1-hcx" firstAttribute="centerY" secondItem="7wm-8u-YpE" secondAttribute="centerY" id="wQc-Wb-8FB"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pm7-Oj-v0O">
@@ -275,29 +275,29 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.1519406952" blue="0.20813924750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="SUu-O1-3QJ" firstAttribute="centerX" secondItem="RdW-l9-rkx" secondAttribute="centerX" id="AZT-fg-k6f"/>
-                                    <constraint firstItem="SUu-O1-3QJ" firstAttribute="top" secondItem="RdW-l9-rkx" secondAttribute="top" constant="5" id="Cya-Pg-Jtc"/>
-                                    <constraint firstItem="SUu-O1-3QJ" firstAttribute="centerY" secondItem="RdW-l9-rkx" secondAttribute="centerY" id="NMf-Ey-kAk"/>
-                                    <constraint firstItem="SUu-O1-3QJ" firstAttribute="leading" secondItem="RdW-l9-rkx" secondAttribute="leading" constant="5" id="Ueo-eF-KuE"/>
+                                    <constraint firstItem="SUu-O1-3QJ" firstAttribute="centerY" secondItem="RdW-l9-rkx" secondAttribute="centerY" id="3yi-Eh-0Vq"/>
+                                    <constraint firstItem="SUu-O1-3QJ" firstAttribute="centerX" secondItem="RdW-l9-rkx" secondAttribute="centerX" id="PXj-nR-xuC"/>
+                                    <constraint firstItem="SUu-O1-3QJ" firstAttribute="leading" secondItem="RdW-l9-rkx" secondAttribute="leading" constant="5" id="R4i-Zj-HWo"/>
+                                    <constraint firstItem="SUu-O1-3QJ" firstAttribute="top" secondItem="RdW-l9-rkx" secondAttribute="top" constant="5" id="ti9-8F-84P"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.5584999866" blue="0.1064452462" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ePe-kp-XDW" firstAttribute="top" secondItem="kWz-Yu-jEQ" secondAttribute="bottom" constant="171" id="2cx-o3-WZw"/>
-                            <constraint firstItem="kWz-Yu-jEQ" firstAttribute="top" secondItem="RdW-l9-rkx" secondAttribute="top" id="8qf-Fh-F5M"/>
-                            <constraint firstItem="RdW-l9-rkx" firstAttribute="leading" secondItem="kWz-Yu-jEQ" secondAttribute="trailing" constant="91" id="CI7-k2-AVp"/>
-                            <constraint firstItem="kWz-Yu-jEQ" firstAttribute="top" secondItem="7wm-8u-YpE" secondAttribute="bottom" constant="44" id="Dgo-Yg-1vf"/>
-                            <constraint firstItem="7wm-8u-YpE" firstAttribute="leading" secondItem="b9b-4s-Of9" secondAttribute="leading" constant="137" id="Je9-Tc-20r"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RdW-l9-rkx" secondAttribute="trailing" constant="11" id="MhD-f6-zyO"/>
-                            <constraint firstItem="7wm-8u-YpE" firstAttribute="top" secondItem="yb8-Xj-U2e" secondAttribute="bottom" constant="163" id="Nwo-SI-UFR"/>
-                            <constraint firstItem="kWz-Yu-jEQ" firstAttribute="bottom" secondItem="RdW-l9-rkx" secondAttribute="bottom" id="hPr-2T-V4M"/>
-                            <constraint firstItem="Pm7-Oj-v0O" firstAttribute="top" secondItem="yb8-Xj-U2e" secondAttribute="bottom" constant="59" id="kks-3t-LEA"/>
-                            <constraint firstItem="kWz-Yu-jEQ" firstAttribute="leading" secondItem="b9b-4s-Of9" secondAttribute="leadingMargin" constant="21" id="nAV-Wh-scG"/>
-                            <constraint firstItem="kWz-Yu-jEQ" firstAttribute="top" secondItem="b9b-4s-Of9" secondAttribute="top" constant="337" id="r6b-al-IzI"/>
-                            <constraint firstAttribute="trailing" secondItem="7wm-8u-YpE" secondAttribute="trailing" constant="128" id="sed-2A-MOJ"/>
-                            <constraint firstItem="RdW-l9-rkx" firstAttribute="leading" secondItem="b9b-4s-Of9" secondAttribute="leading" constant="238" id="uuZ-Bm-eAS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Pm7-Oj-v0O" secondAttribute="trailing" constant="8" id="xyt-NZ-DUO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pm7-Oj-v0O" secondAttribute="trailing" constant="8" id="6gn-02-0Tl"/>
+                            <constraint firstItem="7wm-8u-YpE" firstAttribute="top" secondItem="yb8-Xj-U2e" secondAttribute="bottom" constant="163" id="AQU-fp-x7s"/>
+                            <constraint firstItem="7wm-8u-YpE" firstAttribute="leading" secondItem="b9b-4s-Of9" secondAttribute="leading" constant="137" id="HDC-13-6oT"/>
+                            <constraint firstItem="kWz-Yu-jEQ" firstAttribute="bottom" secondItem="RdW-l9-rkx" secondAttribute="bottom" id="HZj-to-fZh"/>
+                            <constraint firstItem="kWz-Yu-jEQ" firstAttribute="leading" secondItem="b9b-4s-Of9" secondAttribute="leadingMargin" constant="21" id="TgE-Fl-tjo"/>
+                            <constraint firstItem="RdW-l9-rkx" firstAttribute="leading" secondItem="kWz-Yu-jEQ" secondAttribute="trailing" constant="91" id="YUu-XC-rPG"/>
+                            <constraint firstItem="ePe-kp-XDW" firstAttribute="top" secondItem="kWz-Yu-jEQ" secondAttribute="bottom" constant="171" id="aRe-PX-1mm"/>
+                            <constraint firstItem="Pm7-Oj-v0O" firstAttribute="top" secondItem="yb8-Xj-U2e" secondAttribute="bottom" constant="59" id="dX0-tT-dUx"/>
+                            <constraint firstItem="kWz-Yu-jEQ" firstAttribute="top" secondItem="b9b-4s-Of9" secondAttribute="top" constant="337" id="dtR-K8-bmh"/>
+                            <constraint firstItem="kWz-Yu-jEQ" firstAttribute="top" secondItem="7wm-8u-YpE" secondAttribute="bottom" constant="44" id="fMa-GH-9cK"/>
+                            <constraint firstItem="kWz-Yu-jEQ" firstAttribute="top" secondItem="RdW-l9-rkx" secondAttribute="top" id="fUP-10-8Hz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RdW-l9-rkx" secondAttribute="trailing" constant="11" id="pDQ-xk-iaf"/>
+                            <constraint firstAttribute="trailing" secondItem="7wm-8u-YpE" secondAttribute="trailing" constant="128" id="qHN-PH-Ffa"/>
+                            <constraint firstItem="RdW-l9-rkx" firstAttribute="leading" secondItem="b9b-4s-Of9" secondAttribute="leading" constant="238" id="tr1-L7-4bH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="HOME" id="Izx-Mx-32S"/>
