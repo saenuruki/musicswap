@@ -177,7 +177,6 @@ class SearchMusicViewController: UIViewController, UISearchBarDelegate, UITableV
                            "artist": selectedMusicArray[count].artist,
                            "imageUrl": selectedMusicArray[count].imageUrl,
                            "status": "current"]
-            print("ここまでは行けましたか??==========================================")
             print("\((FIRAuth.auth()?.currentUser)!)")//uidって作っていないよね？
             self.ref.child((FIRAuth.auth()?.currentUser?.uid)!).child("myMusic").childByAutoId().setValue(addMyMusic)
         }
