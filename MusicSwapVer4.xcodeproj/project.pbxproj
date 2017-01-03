@@ -21,7 +21,6 @@
 		FFCF17941E053040008B05E9 /* SearchMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF17931E053040008B05E9 /* SearchMusicViewController.swift */; };
 		FFCF17961E054965008B05E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF17951E054965008B05E9 /* User.swift */; };
 		FFCF17981E080BCD008B05E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCF17971E080BCD008B05E9 /* Main.storyboard */; };
-		FFCF179A1E080C86008B05E9 /* FlashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF17991E080C86008B05E9 /* FlashViewController.swift */; };
 		FFCF179C1E0A2522008B05E9 /* MyMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF179B1E0A2522008B05E9 /* MyMusic.swift */; };
 		FFCF179E1E0A29EE008B05E9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF179D1E0A29EE008B05E9 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
@@ -46,7 +45,6 @@
 		FFCF17931E053040008B05E9 /* SearchMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMusicViewController.swift; sourceTree = "<group>"; };
 		FFCF17951E054965008B05E9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FFCF17971E080BCD008B05E9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		FFCF17991E080C86008B05E9 /* FlashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashViewController.swift; sourceTree = "<group>"; };
 		FFCF179B1E0A2522008B05E9 /* MyMusic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMusic.swift; sourceTree = "<group>"; };
 		FFCF179D1E0A29EE008B05E9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,7 +105,6 @@
 				FF3329911DF8F02700A5893B /* LoginViewController.swift */,
 				FF3329931DF8F02700A5893B /* Login.storyboard */,
 				FFCF17971E080BCD008B05E9 /* Main.storyboard */,
-				FFCF17991E080C86008B05E9 /* FlashViewController.swift */,
 				FFCF179D1E0A29EE008B05E9 /* MainViewController.swift */,
 				FF6BC0C41E192A3B00B1D559 /* MyHistoryViewController.swift */,
 				FF6BC0C61E192A4E00B1D559 /* MyPageViewController.swift */,
@@ -262,7 +259,6 @@
 				FF3329901DF8F02700A5893B /* AppDelegate.swift in Sources */,
 				FF6BC0C71E192A4E00B1D559 /* MyPageViewController.swift in Sources */,
 				FFCF179E1E0A29EE008B05E9 /* MainViewController.swift in Sources */,
-				FFCF179A1E080C86008B05E9 /* FlashViewController.swift in Sources */,
 				FFCF179C1E0A2522008B05E9 /* MyMusic.swift in Sources */,
 				FF6BC0C51E192A3B00B1D559 /* MyHistoryViewController.swift in Sources */,
 			);

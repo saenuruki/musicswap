@@ -10,40 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Flash View Controller-->
-        <scene sceneID="l9D-h8-PQ8">
-            <objects>
-                <viewController id="QOo-wu-rIt" customClass="FlashViewController" customModule="MusicSwapVer4" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Qb7-Au-DSJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="tta-LY-CWE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8Tc-Bn-eJW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music Swap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyJ-nR-suv">
-                                <rect key="frame" x="67" y="217" width="241" height="233"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="運命との出会い" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3a1-JG-6EN">
-                                <rect key="frame" x="67" y="355" width="241" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="textColor" red="1" green="0.1519406952" blue="0.20813924750000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.5584999866" blue="0.1064452462" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MYl-bB-57j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-413.60000000000002" y="132.68365817091455"/>
-        </scene>
         <!--MyPage-->
         <scene sceneID="0Jc-w9-Mn7">
             <objects>
@@ -167,7 +133,7 @@
                             <constraint firstItem="5Ae-er-M6V" firstAttribute="top" secondItem="XjN-jx-TQA" secondAttribute="bottom" constant="28" id="zSZ-Wh-5hl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="MyPage" id="5qg-C9-c4J"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="MyPage" image="MyPage" id="5qg-C9-c4J"/>
                     <connections>
                         <outlet property="myMusic1" destination="1p7-se-Tgw" id="0ir-xU-ihX"/>
                         <outlet property="myMusic2" destination="Vya-TK-ip8" id="Arb-nI-TfO"/>
@@ -200,7 +166,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="履歴" id="qGn-76-6xP"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="履歴" image="履歴" id="qGn-76-6xP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gag-e3-lqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,8 +182,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="gOO-ih-PAK" kind="relationship" relationship="viewControllers" id="SDt-uT-gHP"/>
                         <segue destination="QZh-LH-HpW" kind="relationship" relationship="viewControllers" id="8VK-6G-il2"/>
+                        <segue destination="gOO-ih-PAK" kind="relationship" relationship="viewControllers" id="SDt-uT-gHP"/>
                         <segue destination="ToP-kq-Wiw" kind="relationship" relationship="viewControllers" id="mtd-LB-dBV"/>
                     </connections>
                 </tabBarController>
@@ -225,7 +191,7 @@
             </objects>
             <point key="canvasLocation" x="487" y="133"/>
         </scene>
-        <!--HOME-->
+        <!--SWAP-->
         <scene sceneID="D12-Qk-rup">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="QZh-LH-HpW" customClass="MainViewController" customModule="MusicSwapVer4" customModuleProvider="target" sceneMemberID="viewController">
@@ -267,13 +233,6 @@
                                     <constraint firstItem="PV3-O1-hcx" firstAttribute="centerY" secondItem="7wm-8u-YpE" secondAttribute="centerY" id="wQc-Wb-8FB"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pm7-Oj-v0O">
-                                <rect key="frame" x="296" y="79" width="55" height="30"/>
-                                <state key="normal" title="Log Out"/>
-                                <connections>
-                                    <action selector="tapLogout:" destination="QZh-LH-HpW" eventType="touchUpInside" id="VJ7-XR-Sbt"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RdW-l9-rkx">
                                 <rect key="frame" x="238" y="337" width="110" height="110"/>
                                 <subviews>
@@ -292,14 +251,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.5584999866" blue="0.1064452462" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Pm7-Oj-v0O" secondAttribute="trailing" constant="8" id="6gn-02-0Tl"/>
                             <constraint firstItem="7wm-8u-YpE" firstAttribute="top" secondItem="yb8-Xj-U2e" secondAttribute="bottom" constant="163" id="AQU-fp-x7s"/>
                             <constraint firstItem="7wm-8u-YpE" firstAttribute="leading" secondItem="b9b-4s-Of9" secondAttribute="leading" constant="137" id="HDC-13-6oT"/>
                             <constraint firstItem="kWz-Yu-jEQ" firstAttribute="bottom" secondItem="RdW-l9-rkx" secondAttribute="bottom" id="HZj-to-fZh"/>
                             <constraint firstItem="kWz-Yu-jEQ" firstAttribute="leading" secondItem="b9b-4s-Of9" secondAttribute="leadingMargin" constant="21" id="TgE-Fl-tjo"/>
                             <constraint firstItem="RdW-l9-rkx" firstAttribute="leading" secondItem="kWz-Yu-jEQ" secondAttribute="trailing" constant="91" id="YUu-XC-rPG"/>
                             <constraint firstItem="ePe-kp-XDW" firstAttribute="top" secondItem="kWz-Yu-jEQ" secondAttribute="bottom" constant="171" id="aRe-PX-1mm"/>
-                            <constraint firstItem="Pm7-Oj-v0O" firstAttribute="top" secondItem="yb8-Xj-U2e" secondAttribute="bottom" constant="59" id="dX0-tT-dUx"/>
                             <constraint firstItem="kWz-Yu-jEQ" firstAttribute="top" secondItem="b9b-4s-Of9" secondAttribute="top" constant="337" id="dtR-K8-bmh"/>
                             <constraint firstItem="kWz-Yu-jEQ" firstAttribute="top" secondItem="7wm-8u-YpE" secondAttribute="bottom" constant="44" id="fMa-GH-9cK"/>
                             <constraint firstItem="kWz-Yu-jEQ" firstAttribute="top" secondItem="RdW-l9-rkx" secondAttribute="top" id="fUP-10-8Hz"/>
@@ -308,7 +265,7 @@
                             <constraint firstItem="RdW-l9-rkx" firstAttribute="leading" secondItem="b9b-4s-Of9" secondAttribute="leading" constant="238" id="tr1-L7-4bH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="HOME" id="Izx-Mx-32S"/>
+                    <tabBarItem key="tabBarItem" title="SWAP" image="SWAP" id="Izx-Mx-32S"/>
                     <connections>
                         <outlet property="view1" destination="kWz-Yu-jEQ" id="IAH-JC-jQP"/>
                         <outlet property="view2" destination="7wm-8u-YpE" id="HdE-In-SHk"/>
@@ -320,4 +277,9 @@
             <point key="canvasLocation" x="2141.5999999999999" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MyPage" width="25" height="25"/>
+        <image name="SWAP" width="25" height="25"/>
+        <image name="履歴" width="25" height="25"/>
+    </resources>
 </document>
