@@ -36,8 +36,6 @@ class MyPageViewController: UIViewController{
         ref = FIRDatabase.database().reference()
         let userId: String = (FIRAuth.auth()?.currentUser?.uid)!
         ref.child(userId).child("myMusic").observeSingleEvent(of: .value, with: { (snapshot) in
-            /*let value = snapshot.value as? NSDictionary
-             let counts:Int = value!.count*/
             self.myMusicArray.removeAll()
             var count:Int = 0
             for item in snapshot.children{

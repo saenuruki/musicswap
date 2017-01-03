@@ -72,25 +72,18 @@ class NewUserViewController: UIViewController, UITextFieldDelegate{
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: {(user,error) in
             if error == nil{    //ログインの手続きを続ける
-                if let user = user{
-                    let addRequest = user.profileChangeRequest()
-                    addRequest.displayName = name
-                    addRequest.commitChanges { error in
+                if user != nil{
+                    let addRequest = user?.profileChangeRequest()
+                    addRequest?.displayName = name
+                    addRequest?.commitChanges { error in
                         if error != nil {
-                            // An error happened.
+                            print("==============================================")
+                            print("名前情報追加失敗")
+                            print("==============================================")
                         } else {
                             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: {(sUser,sError) in
                                 if sError == nil {
-                                    if let loginUser = sUser {
-                                        // バリデーションが完了しているか確認。完了ならそのままログイン
-                                        //if self.checkUserValidate(user: loginUser) {
-                                            // 完了済みなら、SearchMusicViewControllerに遷移
-                                        self.transitionToView()
-                                        //}else {
-                                            // 完了していない場合は、アラートを表示
-                                            //self.presentValidateAlert()
-                                        //}
-                                    }
+                                    self.transitionToView()
                                 }else {
                                     print("==============================================")
                                     print("error...\(sError?.localizedDescription)")
@@ -100,20 +93,9 @@ class NewUserViewController: UIViewController, UITextFieldDelegate{
                         }
                     }
                 }
-                /*user?.sendEmailVerification(completion: {(error) in
-                    if error == nil {
-                        self.transitionToView()
-                    } else {
-                        print("==============================================")
-                        print("SignUp失敗2")
-                        print("\(error?.localizedDescription)")
-                        print("==============================================")
-                    }
-                })*/
             } else {    //アカウント作成失敗
                 print("==============================================")
-                print("SignUp失敗1")
-                print(error)
+                print("アカウント作成失敗")
                 print("\(error?.localizedDescription)")
                 print("==============================================")
             }

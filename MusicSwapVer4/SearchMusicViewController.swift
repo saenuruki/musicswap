@@ -17,7 +17,7 @@ class SearchMusicViewController: UIViewController, UISearchBarDelegate, UITableV
     var searchMusic:SearchMusic?
     var selectedMusicArray = [SearchMusic]()  //選択済の曲リスト
     let mySections = ["選択された曲","検索結果"]
-    let ref = FIRDatabase.database().reference() //FirebaseDatabaseのルートを指定
+    var ref: FIRDatabaseReference!
     
     
     override func viewDidLoad() {
@@ -172,43 +172,16 @@ class SearchMusicViewController: UIViewController, UISearchBarDelegate, UITableV
     
     
     internal func onClickNextButton(sender: UIButton){
+        ref = FIRDatabase.database().reference() //FirebaseDatabaseのルートを指定
+        let userId: String = (FIRAuth.auth()?.currentUser?.uid)!
         for count in 0...2 {
             let addMyMusic = ["name": selectedMusicArray[count].name,
                            "artist": selectedMusicArray[count].artist,
                            "imageUrl": selectedMusicArray[count].imageUrl,
                            "status": "current"]
-            print("\((FIRAuth.auth()?.currentUser)!)")//uidって作っていないよね？
-            self.ref.child((FIRAuth.auth()?.currentUser?.uid)!).child("myMusic").childByAutoId().setValue(addMyMusic)
+            ref.child(userId).child("myMusic").childByAutoId().setValue(addMyMusic)
         }
        
-        //ユーザー情報登録 realmへの保存
-        /*print("<User登録情報>----------------")
-        self.user = User()
-        self.user?.name = profile[0]
-        print("user.name = \(user?.name)")
-        self.user?.password = profile[1]
-        print("user.password = \(user?.password)")
-        for count in 0...2 {
-            let myMusic = MyMusic()
-            myMusic.name = selectedMusicArray[count].name
-            myMusic.artist = selectedMusicArray[count].artist
-            myMusic.imageUrl = selectedMusicArray[count].imageUrl
-            myMusic.status = "current"
-            let realmMyMusic = try! Realm()
-            try! realmMyMusic.write {
-                realmMyMusic.add(myMusic)
-            }
-            self.user?.myMusic.append(myMusic)
-            print("user.myMusic = \(myMusic)")
-        }
-        print(user!)
-        print("============================")
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(user!)
-        }*/
-        //ページ遷移する最後にcurrentuserにUser.nameを代入する
-
         let storyboard = UIStoryboard(name: "Main",bundle: nil) //storyboardを指定
         let mainTabBar = storyboard.instantiateInitialViewController()
         self.present(mainTabBar!, animated: true, completion: nil)
